@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  /* width: 100%; */
+  background-color: aquamarine;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding: 20px;
+  margin: auto;
+  justify-content: flex-start;
+  /* margin-bottom: 1px; */
+  /* background-color: aquamarine; */
+  
+}
+ .auth {
+  text-decoration: none;
+  margin-right: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+ }
+
+ .lin a {
+   text-decoration: none;
+   padding-left: 2px;
+   padding-right: 5px;
+   background-color: red;
+ }
+ 
+ 
