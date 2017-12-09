@@ -3,10 +3,6 @@
     name,
     avatar,
     authId,
-    questionsAnswered:{ //array of objects 
-      agree,
-      disagree,
-    }
   },
   questions: {
     questID:{
