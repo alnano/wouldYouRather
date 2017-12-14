@@ -4,7 +4,7 @@
     isAuthed:
       isfetching,
       error,
-      authId,
+      user,
         [uid]:
           info: {
             name,
