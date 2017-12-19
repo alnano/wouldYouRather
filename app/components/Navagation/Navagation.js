@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect, Route, NavLink } from 'react-router-dom';
+import { Link, Redirect, Route, NavLink, withRouter } from 'react-router-dom';
 import { nav, lin, container } from './styles.css';
 //conatiner
   //  home
@@ -52,4 +52,4 @@ const Navagation = ({isAuth}) => {
   );
 };
 
-export default Navagation;
+export default Navagation

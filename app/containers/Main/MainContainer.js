@@ -3,8 +3,10 @@ import { Navagation }from 'components';
 import { connect } from 'react-redux'
 import { Link, Redirect, Route, withRouter } from 'react-router-dom';
 
+
+//make sure im logged via facebook
 const fakeAuth = {
-  isAuthenticated: true,
+  isAuthenticated: false,    //mock controls nav state
   func(cb){
     return cb
   },  

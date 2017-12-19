@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Home } from 'components'
-import { Link, Redirect, Route } from 'react-router-dom';
+import { Link, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect }  from 'react-redux'
+
 
 class HomeContainer extends Component {
   constructor(props){
@@ -13,7 +14,7 @@ class HomeContainer extends Component {
     console.log('gaga', this.props)
     this.props.isAuth === true
       ? this.props.history.push('/feed')
-      :  null//this.props.history.push('/authenticate')
+      : null//this.props.history.push('/authenticate')
   }
   componentWillMount() {
     this.wtf()

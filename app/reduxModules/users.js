@@ -45,7 +45,7 @@ const authUser = (uid, user, authId) => {  // add timestamp?
 
 const initialState = {
   isFetching: false,
-  isAuth: true,
+  isAuth: false,
   //isAuth
 }
 
