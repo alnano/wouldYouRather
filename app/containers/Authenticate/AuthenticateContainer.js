@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { FirebaseAuth } from 'react-firebaseui'; 
-import { firebaseAuth, ui, uiConfig } from 'config/constants'
+import { firebaseAuth, provider} from 'config/constants'
 import firebase from 'firebase'
+import { connect }from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from 'reduxModules/users'
+
 
 class AuthenticateContainer extends Component {
   constructor(props){
@@ -10,14 +13,15 @@ class AuthenticateContainer extends Component {
     this.signOut = this.signOut.bind(this)
   }
   signIn(){
-    const provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-    .then(function(result){
-      console.log(result)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
+    // firebase.auth().signInWithPopup(provider)
+    // .then(function(result){
+    //   console.log(result)
+    // })
+    // .catch(function(error){
+    //   console.log(error)
+    // })
+    this.props.action.signInFlow()
+    
   }
   signOut(){
     firebase.auth().signOut().then(function (result) {
@@ -29,6 +33,7 @@ class AuthenticateContainer extends Component {
     });
   }
   render() {
+    console.log('+++++++', this.props)
     return (
       <div className='auth'>
         <button onClick={this.signIn}>tt</button>
@@ -40,4 +45,13 @@ class AuthenticateContainer extends Component {
   }
 }
 
-export default AuthenticateContainer;
+function mapStateToProps({users}){
+  return users;
+}
+function mapDispatchToProps(dispatch) {
+  return {action: bindActionCreators(actionCreators, dispatch)}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AuthenticateContainer)
+//hook up to redux 
+// pass down to auth container 
+// 

@@ -12,17 +12,17 @@ const config = {
 };
 
 
-export var uiConfig = {
-  signInSuccessUrl: '/feed', //idk lets see
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-   
-  ],
+// export var uiConfig = {
+//   signInSuccessUrl: '/feed', //idk lets see
+//   signInOptions: [
+//     // Leave the lines as is for the providers you want to offer your users.
+//     firebase.auth.FacebookAuthProvider.PROVIDER_ID,  
+//   ],
   // Terms of service url.
-  tosUrl: '<your-tos-url>'
-};
+//   tosUrl: '<your-tos-url>'
+// };
 firebase.initializeApp(config);
-export const ui = new firebaseui.auth.AuthUI(firebase.auth());
+export const provider = new firebase.auth.FacebookAuthProvider();
 export const ref = firebase.database().ref()
 export const firebaseAuth = firebase.auth()
+//make function that on sing in yada yada yada 
